@@ -3,7 +3,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000/api",
+    // baseUrl: "http://localhost:5000/api",
+    baseUrl: "https://pathey.onrender.com/api",
     // baseUrl: "https://server-patheya.onrender.com/api",
   }),
   tagTypes: ['Appointments'], // Tags for invalidation
