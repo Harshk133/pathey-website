@@ -1,0 +1,36 @@
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.slider-content {
+  width: 80%; /* Adjusted for responsiveness */
+  max-width: 400px; /* Ensure cards don't stretch too much */
+  height: auto;
+}
+
+
+.slider-content img {
+  width: 100%; /* Ensure the image fills the container's width */
+  height: 100%; /* Ensure the image fills the container's height */
+  object-fit: contain; /* Scale the image to fit without clipping */
+  display: block; /* Remove any inline spacing issues */
+}
+
+.slider-button {
+  color: #333;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .slider-container {
+    flex-direction: column;
+  }
+
+  .slider-content {
+    max-width: 100%;
+    padding: 1rem;
+  }
+}
