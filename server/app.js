@@ -6,6 +6,9 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const appointmentRoutes = require('./routes/appointmentRoutes.routes');
 const blogRoutes = require('./routes/blogRoutes.routes');
+const courseRoutes = require('./routes/coursesRoutes.routes');
+const contactRoutes = require('./routes/contactRoutes.routes');
+const exportDataRoutes = require('./routes/exportDataRoutes.routes');
 const cardRoutes = require('./routes/cardRoutes.routes');
 const authRoutes = require('./routes/authRoutes.routes');
 const adminRoutes = require("./routes/adminRoutes.routes");
@@ -16,7 +19,6 @@ const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 5000;  
-
 
 const _dirname = path.resolve();
 
@@ -39,13 +41,17 @@ app.use(fileUpload({
   useTempFiles: true
 }));
 // app.use(express.urlencoded({ extended: true }));
+// http://localhost:5000/api/appointments/closed-slots
 app.use(bodyParser.json());
 app.use('/api/blogs', blogRoutes);
+app.use('/api/courses', courseRoutes);
+app.use('/api/contacts', contactRoutes);
 app.use('/uploads', express.static('uploads')); // Serve files from 'uploads' folder
-app.use('/api/appointments', appointmentRoutes);
+app.use('/api/appointments', appointmentRoutes); 
 app.use("/api/cards", cardRoutes);
 app.use("/auth", authRoutes);
 app.use('/admin', adminRoutes);
+app.use('/api/export', exportDataRoutes);
 // app.use("/api/blogs", blogRoutes);
 
 

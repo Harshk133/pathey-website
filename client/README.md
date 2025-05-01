@@ -1,19 +1,20 @@
 --- Addition Sections ---
 for header:
-Home
-Aptitude Testing
-Courses
-Blogs
-Appointments
-Contact (Send us a message) inputs- [Name, Phone No., Email, Subject] (Tai cha Name, Phone Number)
+✅ Home
+✅ Aptitude Testing
+✅ Courses
+✅ Blogs
+✅ Appointments
+✅ Contact (Send us a message) inputs- [Name, Phone No., Email, Subject] (Tai cha Name, Phone Number)
 ========================================================================
 Appointform
-YOu can book your appointment upto 3 days!!
+You can book your appointment upto 3 days!!
 by choosing date automatically set the day!
 Todo
 Closing a Session (Earlier) from dashboard for particular timeslot!! (Reason "Not Available")
+Booking must be done before 6 hour! (after 6 hr considered as the booking at next day!)
 ===================================================================
-(Export Data in Excel Sheet Button)
+✅ (Export Data in Excel Sheet Button)
 
 
 

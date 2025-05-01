@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const moment = require("moment");
 
 // const AppointmentSchema = new mongoose.Schema({
 //   name: { type: String, required: true },
@@ -86,5 +87,10 @@ const appointmentSchema = new mongoose.Schema({
 //   timeSlot: { type: String, required: true },
 //   day: { type: String, required: true },
 // });
+
+appointmentSchema.pre("save", function (next) {
+  this.date = moment(this.date).format("YYYY-MM-DD"); // Ensure format before saving
+  next();
+});
 
 module.exports = mongoose.model('Appointment', appointmentSchema);

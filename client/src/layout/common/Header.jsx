@@ -90,18 +90,21 @@ const Header = ({ mode, onModeChange }) => {
             <Button color="inherit" onClick={() => navigate("/")}>
               Home
             </Button>
-            <Button color="inherit" onClick={() => navigate("/blog")}>
-              Blog
-            </Button>
-            <Button color="inherit" onClick={() => navigate("/appointment")}>
-              Appointments
-            </Button>
             <Button
               color="inherit"
               href="https://patheycareer.edumilestones.com/"
               target="_blank"
             >
               For Aptitude Testing
+            </Button>
+            <Button color="inherit" onClick={() => navigate("/courses")}>
+              Courses
+            </Button>           
+            <Button color="inherit" onClick={() => navigate("/blog")}>
+              Blog
+            </Button>
+            <Button color="inherit" onClick={() => navigate("/appointment")}>
+              Appointments
             </Button>
           </Toolbar>
         )}
@@ -121,11 +124,13 @@ const Header = ({ mode, onModeChange }) => {
                   <ListItemText primary="Home" />
                 </ListItemButton>
               </ListItem>
+
               <ListItem>
                 <ListItemButton onClick={() => handleNavigation("/blog")}>
                   <ListItemText primary="Blog" />
                 </ListItemButton>
               </ListItem>
+
               <ListItem>
                 <ListItemButton
                   onClick={() => handleNavigation("/appointment")}
@@ -133,6 +138,13 @@ const Header = ({ mode, onModeChange }) => {
                   <ListItemText primary="Appointments" />
                 </ListItemButton>
               </ListItem>
+
+              <ListItem>
+                <ListItemButton onClick={() => handleNavigation("/courses")}>
+                  <ListItemText primary="Courses" />
+                </ListItemButton>
+              </ListItem>
+
               <ListItem>
                 <ListItemButton
                   component="a"
@@ -248,6 +260,11 @@ const Header = ({ mode, onModeChange }) => {
           <ListItem>
             <ListItemButton onClick={() => handleNavigation("/blog")}>
               <ListItemText primary="Blog" />
+            </ListItemButton>
+          </ListItem>
+          <ListItem>
+            <ListItemButton onClick={() => handleNavigation("/courses")}>
+              <ListItemText primary="Courses" />
             </ListItemButton>
           </ListItem>
           <ListItem>

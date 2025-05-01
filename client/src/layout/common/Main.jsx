@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "../../components/Hero";
 import Blog from "../pages/Blogs/Blog";
 import About from "../../components/About";
+import ContactForm from "./ContactForm";
 
 const Main = ({ theme, intensity }) => {
   return (
@@ -15,6 +16,8 @@ const Main = ({ theme, intensity }) => {
 
       {/* <PlayLists theme={theme} /> */}
       <Blog theme={theme} />
+
+      <ContactForm theme={theme} />
     </>
   );
 };

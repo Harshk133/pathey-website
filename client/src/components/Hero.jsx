@@ -12,7 +12,7 @@ const Hero = ({ intensity, theme }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   // const [loading, setLoading] = useState(true);
 
-  const { data: cardData, isLoading: loading } = useGetCardsQuery();
+  const { data: cardData = [], isLoading: loading } = useGetCardsQuery();
 
   // useEffect(() => {
   //   const fetchCardData = async () => {

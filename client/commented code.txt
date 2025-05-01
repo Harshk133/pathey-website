@@ -1,0 +1,69 @@
+<Grid item xs={12} md={6}>
+              <Typography>Select Date</Typography>
+              {/* <Input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                fullWidth
+                margin="dense"
+              /> */}
+              <Input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                fullWidth
+                margin="dense"
+                inputProps={{
+                  min: format(new Date(), "yyyy-MM-dd"),
+                  disabled:
+                    isFetching || (!date ? false : isDateFullyBooked(date)),
+                }}
+              />
+            </Grid>
+
+
+
+
+
+
+<Grid item xs={12} md={6}>
+              <Typography>Select Time Slot</Typography>
+              {/* <Select
+                value={timeSlot}
+                onChange={(e) => setTimeSlot(e.target.value)}
+                fullWidth
+                margin="dense"
+                disabled={isFetching}
+              >
+                {timeSlots.map((option) => (
+                  <MenuItem
+                    key={option.value}
+                    value={option.value}
+                    disabled={isTimeSlotBooked(date, option.value)}
+                  >
+                    {option.label}{" "}
+                    {isTimeSlotBooked(date, option.value) ? "(Booked)" : ""}
+                  </MenuItem>
+                ))}
+              </Select> */}
+              <Select
+                value={timeSlot}
+                onChange={(e) => setTimeSlot(e.target.value)}
+                fullWidth
+                margin="dense"
+                disabled={
+                  isFetching || !date || (date && isDateFullyBooked(date))
+                }
+              >
+                {timeSlots.map((option) => (
+                  <MenuItem
+                    key={option.value}
+                    value={option.value}
+                    disabled={!date || isTimeSlotBooked(date, option.value)}
+                  >
+                    {option.label}{" "}
+                    {isTimeSlotBooked(date, option.value) ? "(Booked)" : ""}
+                  </MenuItem>
+                ))}
+              </Select>
+            </Grid>

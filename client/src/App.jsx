@@ -157,6 +157,8 @@ import BlogPage from "./layout/pages/Blogs/BlogPage";
 // Importing Layout Components
 import Header from "./layout/common/Header";
 import Footer from "./layout/common/Footer";
+import Courses from "./layout/pages/Courses/Courses";
+import CoursePage from "./layout/pages/Courses/CoursePage";
 
 // Private Route Wrapper Component
 const PrivateRoutes = ({ children, isAuthenticated }) => {
@@ -253,6 +255,19 @@ function App() {
       ),
     },
     {
+      path: "/course/:id",
+      element: (
+        <>
+          <RefreshHandler setIsAuthenticated={setIsAuthenticated} />
+          <PrivateRoutes isAuthenticated={isAuthenticated}>
+            <Layout mode={mode} onModeChange={handleModeChange} theme={theme}>
+              <CoursePage theme={theme} />
+            </Layout>
+          </PrivateRoutes>
+        </>
+      ),
+    },
+    {
       path: "/appointment",
       element: (
         <>
@@ -265,13 +280,27 @@ function App() {
         </>
       ),
     },
+    {
+      path: "/courses",
+      element: (
+        <>
+          <RefreshHandler setIsAuthenticated={setIsAuthenticated} />
+          <PrivateRoutes isAuthenticated={isAuthenticated}>
+            <Layout mode={mode} onModeChange={handleModeChange} theme={theme}>
+              {/* <Appointment theme={theme} /> */}
+              <Courses theme={theme} />
+            </Layout>
+          </PrivateRoutes>
+        </>
+      ),
+    },
   ]);
 
   return (
     <>
       <ToastContainer />
       <ThemeProvider theme={theme}>
-        <RouterProvider router={router} />
+        <RouterProvider router={router} future={{ v7_partialHydration: true, v7_skipActionErrorRevalidation: true }} />
       </ThemeProvider>
     </>
   );
