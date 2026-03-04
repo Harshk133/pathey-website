@@ -138,7 +138,7 @@
 
 
 
-import React, { useState, Suspense } from "react";
+import { useState } from "react";
 import "./App.css";
 import { createTheme, ThemeProvider } from "@mui/material";
 import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";

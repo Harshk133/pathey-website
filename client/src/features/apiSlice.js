@@ -46,7 +46,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://localhost:5000/api", // Matches your latest base URL
+    baseUrl: "https://patheyedu.com/api", // Matches your latest base URL
     // baseUrl: import.meta.env.VITE_APP_BACKEND_URL_API, // Uncomment for environment variable usage
     prepareHeaders: (headers) => {
       const token = localStorage.getItem("token"); // Optional: Add auth token if needed
